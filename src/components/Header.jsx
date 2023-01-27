@@ -7,17 +7,20 @@ import { IconContext } from "react-icons";
 function Header() {
 	return (
 		<div className='header'>
-			<div className='logos__container'>
-
+			<div className="telas__logo">
 				<a href='#/' target="#" className='link__logo'>
 					<img className='header__logo'
 						src='https://scontent.faep14-3.fna.fbcdn.net/v/t39.30808-6/280801944_558309148983574_2186507381685286523_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hphpXi1DX_8AX9_RGI2&_nc_oc=AQlqYEn4bJ2PiTG2mipaRnFxc1gTRPRfNGIfjrZTdOOS15Xxhi7q5m3rbRa5GlXUW64&_nc_ht=scontent.faep14-3.fna&oh=00_AfBLZWypUzKQma7zVBZzcJhYDzyl8QxtvIV14gezgHR_Og&oe=63D4FD4C'
 						alt='logo' />
 				</a>
-				<h4>TELAS GROUP</h4>
+				<h3>TELAS GROUP</h3>
 
-				<IconContext.Provider value={{ color: 'black', size: '25px' }}>
-					<IconButton value={{className: "FaInstagram"}}>
+			</div>
+
+
+			<div className='logos__container'>
+				<IconContext.Provider value={{ color: 'black', size: '20px' }}>
+					<IconButton>
 						<FaInstagram />
 					</IconButton>
 					<IconButton>
@@ -28,8 +31,6 @@ function Header() {
 					</IconButton>
 				</IconContext.Provider >
 			</div>
-
-
 		</div >
 	)
 }
