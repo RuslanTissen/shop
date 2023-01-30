@@ -4,12 +4,12 @@
 	justify-content: space-between;
 	/* z-index: 100; */
 }
-.telas__logo{
+.telas__logo {
 	min-width: none;
 	width: fit-content;
 }
 .link__logo {
-	display:flex;
+	display: flex;
 	font-size: 2em;
 	align-items: center;
 	color: black;
@@ -31,7 +31,7 @@
 	border: none;
 	border-radius: 5px;
 }
-input{
+input {
 	font-size: 1.5em;
 	height: 40px;
 }
@@ -45,4 +45,34 @@ input{
 }
 .logos__container button {
 	margin: 0 5px;
+}
+
+/*-----------Midle part -----------  */
+.section-goods {
+	height: fit-content;
+	display: flex;
+}
+.user-cards {
+	max-width: 90%;
+	min-height: 100px;
+	gap: 0.25em;
+	margin: 1rem auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	margin-top: 1em;
+}
+.card {
+	height: 50px;
+	border: 1px solid black;
+	padding: 0.5rem;
+}
+.card-header {
+	margin-bottom: 0.25rem;
+}
+.card-body {
+	font-size: 0.8rem;
+	color: #777;
+}
+.hide {
+	display: none;
 }
