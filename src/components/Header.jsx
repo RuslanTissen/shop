@@ -12,11 +12,19 @@ function Header() {
 					<img className='header__logo'
 						src='images/telas_LOGO.jpg'
 						alt='logo' />
+				<p>TELAS GROUP</p>	
 				</a>
-				<h2>TELAS GROUP</h2>
-
 			</div>
 
+			<div className="search-wrapper">
+				<input type="search" id="search" />
+			</div>
+			{/* <div className="user-cards">
+				<div className="cards">
+					<div className="card-header">Name</div>
+					<div className="card-body">email</div>
+				</div>
+			</div> */}
 
 			<div className='logos__container'>
 				<IconContext.Provider value={{ color: 'black' }}>
