@@ -1,5 +1,5 @@
 .section-goods {
-	max-width: 100%;
+	/* max-width: 100%; */
 	height: fit-content;
 	display: flex;
 }

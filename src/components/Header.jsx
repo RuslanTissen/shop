@@ -5,6 +5,23 @@ import { FaFacebookF, FaTiktok, FaInstagram } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 function Header() {
+	const userCardTemplate = document.querySelector('[data-user-template]')
+	const userCardContainer = document.querySelector('[data-user-cards-container]')
+	const searchInput = document.querySelector('[data-search]')
+
+	fetch("https://jsonplaceholder.typicode.com/users")
+		.then(res => res.json())
+		.then(data => {
+			data.forEach(user => {
+				const card = userCardTemplate.content.cloneNode(true).children[0]
+				const header = card.querySelector('[data-header]')
+				const body = card.querySelector('[data-body]')
+				header.textContent = user.name
+				body.textContent = user.email
+				userCardContainer.append(card )
+			})
+		});
+
 	return (
 		<div className='header'>
 			<div className="telas__logo">
@@ -17,14 +34,8 @@ function Header() {
 			</div>
 
 			<div className="search-wrapper">
-				<input type="search" id="search" />
+				<input type="search" id="search " data-search/>
 			</div>
-			{/* <div className="user-cards">
-				<div className="cards">
-					<div className="card-header">Name</div>
-					<div className="card-body">email</div>
-				</div>
-			</div> */}
 
 			<div className='logos__container'>
 				<IconContext.Provider value={{ color: 'black' }}>
