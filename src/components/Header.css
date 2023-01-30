@@ -5,7 +5,8 @@
 	/* z-index: 100; */
 }
 .telas__logo{
-	min-width: none;width: fit-content;
+	min-width: none;
+	width: fit-content;
 }
 .link__logo {
 	display:flex;

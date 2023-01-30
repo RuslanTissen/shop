@@ -1,10 +1,9 @@
 .section-goods {
-	/* max-width: 100%; */
 	height: fit-content;
 	display: flex;
 }
 .user-cards {
-	max-width: 1500px;
+	max-width: 90%;
 	min-height: 100px;
 	gap: 0.25em;
 	margin: 1rem auto;
