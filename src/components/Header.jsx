@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import './Header.css'
 import { IconButton } from '@mui/material';
 import { FaFacebookF, FaTiktok, FaInstagram } from 'react-icons/fa';
@@ -17,7 +18,7 @@ function Header() {
 			.then(data => {
 				// setInfo(data)
 				// console.log(info);
-				names = data.forEach(nm => {
+				data.map(nm => {
 					setName(nm.name)
 					setEmail(nm.email)
 					return console.log({ name, email });
@@ -29,6 +30,8 @@ function Header() {
 	useEffect(() => {
 		fetchData()
 	}, [])
+
+
 
 	// const userCardTemplate = document.querySelector('[data-user-template]')
 	// const userCardContainer = document.querySelector('[data-user-cards-container]')
@@ -89,9 +92,10 @@ function Header() {
 					</IconContext.Provider >
 				</div>
 			</div >
-			<div className="section-goods">
+
+			<div className="section-goods" >
 				<div className="user-cards" data-user-cards-container>
-					{name + ' ' + email}
+					{name + " " + email}
 				</div>
 			</div>
 
