@@ -1,19 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Header.css'
 import { IconButton } from '@mui/material';
 import { FaFacebookF, FaTiktok, FaInstagram } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 function Header() {
-	// const [name, setName] = useState("")
+	// let [info, setInfo] = useState([])
+	let [name, setName] = useState([])
+	let [email, setEmail] = useState([])
 
-	fetch("https://jsonplaceholder.typicode.com/users")
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
-		})
-		.catch(e => console.error(e))
+	let names = []
 
+	function fetchData() {
+		fetch("https://jsonplaceholder.typicode.com/users")
+			.then(res => res.json())
+			.then(data => {
+				// setInfo(data)
+				// console.log(info);
+				names = data.forEach(nm => {
+					setName(nm.name)
+					setEmail(nm.email)
+					return console.log({ name, email });
+				})
+			})
+			.catch(e => console.error(e))
+	}
+
+	useEffect(() => {
+		fetchData()
+	}, [])
 
 	// const userCardTemplate = document.querySelector('[data-user-template]')
 	// const userCardContainer = document.querySelector('[data-user-cards-container]')
@@ -76,8 +91,7 @@ function Header() {
 			</div >
 			<div className="section-goods">
 				<div className="user-cards" data-user-cards-container>
-
-
+					{name + ' ' + email}
 				</div>
 			</div>
 
